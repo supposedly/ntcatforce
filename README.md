@@ -1,6 +1,6 @@
 # [ntcatforce](https://supposedly.github.io/ntcatforce)
-by pzq_alex and para, with the minimal amount of changes to para's nt-to-map script to run it as a webpage
+Written by user Para, with the minimal amount of changes to give it a ~proper (ugly but usable) webpage interface
 
-Feed the output of this tool into the ntcatforce software from [this post](https://conwaylife.com/forums/viewtopic.php?p=163761#p163761), with Para's original script in the post below it
+Use this the ntcatforce software from [this post](https://conwaylife.com/forums/viewtopic.php?p=163761#p163761). You have to paste the output string into LifeAPI.h (after the line that ends `const static bool table[512] = {`). You should also probably update the hardcoded RLE rulestrings in CatForce.cpp.
 
-Read more about [CatForce](https://conwaylife.com/wiki/CatForce)
+Also read more about [CatForce](https://conwaylife.com/wiki/CatForce)
