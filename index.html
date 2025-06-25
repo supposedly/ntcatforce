@@ -9,7 +9,7 @@
 
 <body>
     <div>
-        <p>Type here:</p>
+        <p>Type INT rulestring here (B/S):</p>
         <input type="text" onchange="doThingAndDisplay(this.value)" oninput="this.onchange()" onkeyup="this.onchange()"
             onpaste="this.onchange()">
     </div>
@@ -398,6 +398,7 @@
                             return "ERROR: only one slash allowed";
                         }
                         seenSlash = true;
+                        // this was supposed to allow the 23/3 format as well as the B3/S23 format but only the latter currently actually works oops
                         bs = bs === "S" ? "B" : "S";
                         count = null;
                     } else if (c !== "0") {
