@@ -47,6 +47,7 @@
                 SET(TRANSITION,VALUE) sets the transition TRANSITION (ex. B3y or S5e) to VALUE (1 for yes, the cell stays alive or 0 for no, it dies).
                 SETALL(TRANSITION,VALUE) acts similarly to SET but it sets ALL transitions in TRANSITION to VALUE (ex. SETALL("B3",1) would set all transitions in B3 to alive).
             */
+            console.log("Generating new output string");
             let arr = new Array(512);
             for (let i = 0; i < 512; i++) {
                 arr[i] = 0;
@@ -337,7 +338,7 @@
             }
 
             let SET = function (token, val) {
-                // console.log(`SET ${token} ${val}`)
+                console.log(`SET ${token} ${val}`)
                 if (token[0] != "B" && token[0] != "S") {
                     throw `Error: Token does not start with B or S.`;
                 }
@@ -356,7 +357,7 @@
                 throw `Error: "${token}" does not exist.`;
             }
             let SETALL = function (token, val) {
-                // console.log(`SETALL ${token} ${val}`)
+                console.log(`SETALL ${token} ${val}`)
                 if (token[0] != "B" && token[0] != "S") {
                     throw `Error: Token does not start with B or S.`;
                 }
