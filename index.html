@@ -399,7 +399,6 @@
                             return "ERROR: only one slash allowed";
                         }
                         seenSlash = true;
-                        // this was supposed to allow the 23/3 format as well as the B3/S23 format but only the latter currently actually works oops
                         bs = bs === "S" ? "B" : "S";
                         count = null;
                     } else if (c !== "0") {
@@ -408,6 +407,9 @@
                     seenLetters = false;
                     truthValue = 1;
                 } else if (c == "-") {
+                    if (count === null) {
+                        return "ERROR: hyphen with no number before it";
+                    }
                     SETALL(`${bs}${count}`, 1);
                     truthValue = 0;
                 } else {
