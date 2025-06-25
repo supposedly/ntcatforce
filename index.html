@@ -386,10 +386,10 @@
             let seenSlash = false;
             let seenLetters = false;
             let seenHyphen = false;
-            for (const c of `${rulestring}\0`) {
+            for (const c of `${rulestring}�`) {
                 if (/[bs]/i.test(c)) {
                     bs = c.toUpperCase();
-                } else if (/\d/.test(c) || c === "/" || c === "\0") {
+                } else if (/\d/.test(c) || c === "/" || c === "�") {
                     if (!seenLetters && count !== null) {
                         if (!truthValue) {
                             return "ERROR: hyphen with no letters after it";
