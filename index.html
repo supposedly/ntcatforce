@@ -384,6 +384,7 @@
             let truthValue = 1;
             let seenSlash = false;
             let seenLetters = false;
+            let seenHyphen = false;
             for (const c of `${rulestring}\0`) {
                 if (/[bs]/i.test(c)) {
                     bs = c.toUpperCase();
@@ -405,13 +406,15 @@
                         count = c;
                     }
                     seenLetters = false;
+                    seenHyphen = false;
                     truthValue = 1;
                 } else if (c == "-") {
-                    if (count === null) {
-                        return "ERROR: hyphen with no number before it";
+                    if (count === null || seenHyphen) {
+                        return "ERROR: hyphen with no number immediately before it";
                     }
                     SETALL(`${bs}${count}`, 1);
                     truthValue = 0;
+                    seenHyphen = true;
                 } else {
                     seenLetters = true;
                     SET(`${bs}${count}${c}`, truthValue);
